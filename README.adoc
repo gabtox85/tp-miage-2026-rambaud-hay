@@ -4,7 +4,7 @@
 
 WARNING: **NE PAS OUBLIER DE MENTIONNER ICI LES NOMS DE TOUS LES MEMBRES DU BINOME. SEULS LES NOMS ICI PRESENTS SERONT NOTÉS. PAS LA PEINE DE ME PRÉVENIR PAR MAIL, JE CONSULTE UNIQUEMENT LES FORKS GITHUB DE MON DEPOT.**
 
-#XXX# (et #YYY#)
+HAY et RAMBAUD
 
 Commentaires éventuels des étudiants : #XXXXXX#
 
@@ -112,6 +112,7 @@ NOTE: Pour lancer l'application Spring, sélectionner la classe `TodolistApplica
 * Quand le nouveau endpoint fonctionne, commiter, faire un push vers Github.
 
 * Vérifier avec DBeaver que les données sont bien en base PostgreSQL.
+Tout fonctionne bien
 
 ### Exercice 2 - Refactoring en architecture hexagonale
 _Temps estimé : 1 h 20_
