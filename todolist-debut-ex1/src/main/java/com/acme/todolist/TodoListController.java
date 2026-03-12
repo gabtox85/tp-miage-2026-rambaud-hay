@@ -29,9 +29,7 @@ public class TodoListController {
 		this.todoItemRepository = todoItemRepository;
 	}
 	
-	public TodoListController() {
-		super();		
-	}
+
 
 	@PostMapping("/todos")
 	@ResponseStatus(code = HttpStatus.CREATED)
