@@ -130,6 +130,12 @@ Source : http://leanpub.com/get-your-hands-dirty-on-clean-architecture[Tom Hombe
 
 *Rappeler en quelques lignes les grands principes de l'architecture hexagonale.*
 
+L'architecture hexagonale, ce repose sur 3 éléments importants pour que le code reste propre :
+
+1. **Séparer explicitement User-Side, Business Logic et Server-Side** : on mélange pas les torchons et les serviettes. L'interface utilisateur , la logique métier, et le côté serveur ont chacun leur espace pour éviter de faire un gros plat de spaghettis.
+2. **Les dépendances vont vers la Logique Métier** : Tout ce qui l'entoure doit dépendre de lui pour s'adapter, mais le métier se fiche totalement de la technique, il dépend de personne.
+3. **On isole les frontières par des Ports et Adapters** : Pour brancher le monde extérieur au coeur métier, on plug des prises (les *Ports*, les interfaces Java) et des embouts (les *Adapters*). Si on change de composants technique il y auras juste besoin de changer les embouts.
+
 Compléter ce code avec une fonctionnalité de création de `TodoItem`  persisté en base et appelé depuis un endpoint REST `POST /todos` qui :
 
 * prend un `TodoItem` au format JSON dans le body (voir exemple de contenu plus haut);
