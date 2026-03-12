@@ -75,9 +75,18 @@ docker run -it -e POSTGRES_PASSWORD=password -p 5432:5432 postgres
 ```
 *Expliquer cette ligne de commande (y compris les options utilisées)*
 
+- `docker run` : Commande principale pour créer et démarrer un nouveau conteneur à partir d'une image Docker.
+- `-it` : Exécute le conteneur en mode interactif (`-i`) et alloue un pseudo-terminal (`-t`). Cela permet d'attacher le terminal actuel pour voir l'activité et les logs de PostgreSQL.
+- `-e POSTGRES_PASSWORD=password` : Définit une variable d'environnement (`-e`). Ici, elle initialise le mot de passe du superutilisateur PostgreSQL.
+- `-p 5432:5432` : Redirige les ports (`-p`). Mappe le port `5432` de la machine hôte vers le port `5432` du conteneur, rendant la base accessible depuis l'extérieur du conteneur.
+- `postgres` : Le nom de l'image Docker officielle à exécuter.
+
 * Compléter le code manquant dans la méthode `TodoListController.createTodoItem()`
 
 *Pourquoi `todoItemRepository` est-il `null` ? Quelle est la meilleure façon de l'injecter ?*
+
+`todoItemRepository` est `null` car Spring utilise par défaut le constructeur sans argument pour instancier le contrôleur. L'autre constructeur, qui assigne l'attribut, n'est pas appelé.
+La meilleure façon de l'injecter est d'utiliser l'**injection par constructeur**. Pour cela, la solution est de **supprimer le constructeur vide**. Ainsi, Spring sera obligé d'utiliser le seul constructeur disponible et d'injecter automatiquement l'instance de `TodoItemRepository` correspondante.
 
 * Modifier le code en conséquence.
 
