@@ -152,6 +152,10 @@ _Temps estimé : 20 mins_
 
 *Quels famille de tests devra-t-on écrire pour les adaptateurs ?* 
 
+Pour les adaptateurs, on va faire des **tests d'intégration** :
+- **Adaptateur REST (le web)** : On utilise `@WebMvcTest`.On envoie de fausses requêtes HTTP et on fait semblant que le métier fait son job, juste pour vérifier que le contrôleur renvoie bien un JSON correct ou le bon code 201.
+- **Adaptateur de Persistance (la BDD)** : On utilise `@DataJpaTest`. L'idée c'est de lancer une petite base de données temporaire juste le temps du test pour voir si nos requêtes en base de données marchent pour de vrai, sans tricher.
+
 *S'il vous reste du temps, écrire quelques-uns de ces tests.*
 
 [TIP]
